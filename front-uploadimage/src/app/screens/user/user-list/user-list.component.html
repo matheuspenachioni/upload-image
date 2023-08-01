@@ -1,0 +1,59 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>home</mat-icon>
+  </button>
+  <span>Lista de Usuários</span>
+</mat-toolbar>
+
+<div class="list-container">
+  <mat-card class="card mat-elevation-z8">
+    <mat-card-content>
+      <h1>Seja bem-vindo(a)!</h1>
+      <p>Este é um projeto bem simples, trata-se de um upload de imagens utilizando <strong>Angular 15</strong>,
+        <strong>Spring Boot 3.1.2</strong> e
+        <strong>PostgreSQL</strong>
+      </p>
+      <p>Eu estava com uma vontade gigantesca de fazer isso e também queria saber como funcionava, tive algumas
+        dificuldades durante o desenvolvimento, mas eu finalmente consegui e fiquei muito feliz com isso! Apesar de não
+        ser a forma mais recomendada,
+        as imagens estão sendo salvas no banco de dados como base64...</p>
+      <p>Não sou muito bom com CSS, então tentei fazer algo simples e fácil de se usar, abraços!</p>
+      <hr>
+      <button mat-raised-button color="primary" class="full-width" routerLink="save"> Novo Usuário </button>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="card mat-elevation-z8">
+    <mat-card-content>
+      <mat-table [dataSource]="users">
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.id}} </mat-cell>
+        </ng-container>
+
+        <!-- Foto Column -->
+        <ng-container matColumnDef="photo">
+          <mat-header-cell *matHeaderCellDef> Foto de Perfil </mat-header-cell>
+          <mat-cell *matCellDef="let user"> <img [src]="'data:image/jpeg;base64,' + user.photo" width="100" height="100"
+              class="user-photo"> </mat-cell>
+        </ng-container>
+
+        <!-- Nome do Usuário Column -->
+        <ng-container matColumnDef="username">
+          <mat-header-cell *matHeaderCellDef> Nome de Usuário </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.username}} </mat-cell>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef> E-mail </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.email}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </mat-card-content>
+  </mat-card>
+</div>

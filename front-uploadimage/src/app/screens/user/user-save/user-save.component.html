@@ -1,0 +1,41 @@
+
+<mat-toolbar color="primary">
+    <button mat-icon-button routerLink="../" class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>Novo Usuário</span>
+</mat-toolbar>
+
+<div class="form-container">
+    <mat-card class="card mat-elevation-z8">
+        <mat-card-content>
+            <h3 class="center">Foto de Perfil</h3>
+            <hr>
+            <div *ngIf="imagePreview" class="mt-1">
+                <img [src]="imagePreview" class="image-preview">
+                <p class="center mt-1">Está é uma prévia da sua foto de perfil</p>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="card mat-elevation-z8">
+        <mat-card-content>
+            <h3 class="center">Preencha todos os campos</h3>
+            <hr>
+            <form (ngSubmit)="onSubmit()" class="mt-1">
+                <mat-form-field class="full-width">
+                    <mat-label>Nome de Usuário</mat-label>
+                    <input matInput [(ngModel)]="user.username" name="username" required>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Email:</mat-label>
+                    <input matInput [(ngModel)]="user.email" name="email" required>
+                </mat-form-field>
+                <div>
+                    <input type="file" (change)="onFileChanged($event)">
+                </div>
+                <button mat-raised-button color="primary" class="full-width mt-1" type="submit">Cadastrar</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

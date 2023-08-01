@@ -1,0 +1,31 @@
+.card {
+    width: 49.5%;
+    margin-top: 1rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.image-preview {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover; /* Para manter o aspecto da imagem */
+}
+
+.full-width {
+    width: 100%;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}

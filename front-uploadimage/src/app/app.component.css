@@ -1,0 +1,11 @@
+.body {
+    width: calc(100% - 5rem);
+    height: 100vh;
+    z-index: 0;
+    position: relative;
+    top: 0;
+    transition: all .5s ease;
+    background: #38393a;
+    padding: 2.5rem;
+}
+

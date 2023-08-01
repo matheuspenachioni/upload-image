@@ -1,0 +1,26 @@
+.card {
+    width: 49.5%;
+    margin-top: 1rem;
+}
+
+.user-photo {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+mat-cell {
+    padding-bottom: .5rem;
+}
+
+mat-row {
+    padding-top: .5rem;
+}
+
+.list-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.full-width {
+    width: 100%;
+}
